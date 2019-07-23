@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+import csv
+with open('PEARC_Cloud_2019_un_pwd.csv', newline='') as csvfile:
+  #r = csv.reader(csvfile, delimiter=',', quotechar='|')
+  r = csv.reader(csvfile, delimiter=',')
+  for row in r:
+    print("python template_render.py %s template/storage.json storage_system_template.json %s %s TRAINING-OPEN PEARC-CLOUD" % (row[2], row[0], row[1]))
+    print("python template_render.py %s template/compute.json compute_system_template.json %s %s TRAINING-OPEN PEARC-CLOUD" % (row[2], row[0], row[1]))
